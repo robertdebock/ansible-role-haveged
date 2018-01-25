@@ -1,0 +1,19 @@
+---
+# tasks file for ansible-role-haveged
+- name: install software
+  package:
+    name: "{{ item }}"
+  with_items:
+    - "{{ haveged_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(haveged_packages[ansible_distribution]
+      | default(haveged_packages['default'] )) }}"
+
+- name: start and enable software
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  with_items:
+    - "{{ haveged_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(haveged_services[ansible_distribution]
+      | default(haveged_services['default'] )) }}"
