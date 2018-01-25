@@ -6,4 +6,4 @@ haveged_packages:
 
 haveged_services:
   default:
-    - haveget
+    - haveged
