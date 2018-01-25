@@ -17,3 +17,5 @@
     - "{{ haveged_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
       | default(haveged_services[ansible_distribution]
       | default(haveged_services['default'] )) }}"
+  when:
+    - ansible_virtualization_type != "docker"
