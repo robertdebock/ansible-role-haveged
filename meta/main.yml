@@ -45,5 +45,4 @@ galaxy_info:
     - installer
     - server
 
-dependencies:
-  - robertdebock.epel
+dependencies: []
