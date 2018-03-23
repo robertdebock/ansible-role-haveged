@@ -4,7 +4,7 @@ galaxy_info:
   description: Install, start & enable haveged, an entropy creator
   license: Apache License, Version 2.0
 
-  min_ansible_version: 2.2
+  min_ansible_version: 2.3
 
   platforms:
     - name: Alpine
