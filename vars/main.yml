@@ -1,6 +1,6 @@
 ---
 # vars file for ansible-role-haveged
-haveged_configuration
+haveged_configuration:
   default:
     packages:
       - haveged
