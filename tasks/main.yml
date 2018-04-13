@@ -4,9 +4,9 @@
   package:
     name: "{{ item }}"
   with_items:
-    - "{{ haveged_configuration[ansible_distribution ~ '-' ~ ansible_distribution_major_version]['packages']
-      | default(haveged_configuration[ansible_distribution]['packages']
-      | default(haveged_configuration['default']['packages'] )) }}"
+    - "{{ haveged_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(haveged_packages[ansible_distribution]
+      | default(haveged_packages['default'] )) }}"
 
 - name: start and enable software
   service:
@@ -14,8 +14,8 @@
     state: started
     enabled: true
   with_items:
-    - "{{ haveged_configuration[ansible_distribution ~ '-' ~ ansible_distribution_major_version]['services']
-      | default(haveged_configuration[ansible_distribution]['services']
-      | default(haveged_configuration['default']['services'] )) }}"
+    - "{{ haveged_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(haveged_services[ansible_distribution]
+      | default(haveged_services['default'] )) }}"
   when:
     - ansible_virtualization_type != "docker"
