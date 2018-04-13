@@ -6,7 +6,7 @@
   with_items:
     - "{{ haveged_configuration[ansible_distribution ~ '-' ~ ansible_distribution_major_version]['packages']
       | default(haveged_configuration[ansible_distribution]['packages']
-      | default(haveged_packages['default']['packages'] )) }}"
+      | default(haveged_configuration['default']['packages'] )) }}"
 
 - name: start and enable software
   service:
