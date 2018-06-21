@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: haveged-debian-stretch
-    image: debian:stretch
+  - name: haveged-debian-stable
+    image: debian:stable
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-stretch
+  name: debian-stable
 verifier:
   name: goss
   lint:

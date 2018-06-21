@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: haveged-debian-buster
-    image: debian:buster
+  - name: haveged-fedora-rawhide
+    image: fedora:rawhide
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-buster
+  name: fedora-rawhide
 verifier:
   name: goss
   lint:
