@@ -39,12 +39,12 @@ galaxy_info:
   galaxy_tags:
     - entropy
     - haveged
-    - CentOS
-    - Fedora
-    - RHEL
-    - Debian
-    - Alpine
-    - Ubuntu
+    - centos
+    - fedora
+    - rhel
+    - debian
+    - alpine
+    - ubuntu
     - system
     - installer
     - server
