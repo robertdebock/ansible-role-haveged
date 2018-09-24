@@ -2,16 +2,13 @@
 # tasks file for ansible-role-haveged
 - name: install software
   package:
-    name: "{{ item }}"
-  with_items:
-    - "{{ haveged_packages }}"
+    name: haveged
+    state: present
 
 - name: start and enable software
   service:
-    name: "{{ item }}"
+    name: haveged
     state: started
     enabled: true
-  with_items:
-    - "{{ haveged_service }}"
   when:
     - ansible_virtualization_type != "docker"
