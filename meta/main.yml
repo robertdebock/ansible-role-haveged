@@ -4,7 +4,6 @@ galaxy_info:
   role_name: haveged
   description: Install, start & enable haveged, an entropy creator
   license: Apache License, Version 2.0
-
   min_ansible_version: 2.4
 
   platforms:

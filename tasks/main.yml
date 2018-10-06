@@ -1,11 +1,11 @@
 ---
 # tasks file for ansible-role-haveged
-- name: install software
+- name: install haveged
   package:
     name: haveged
-    state: present
+    state: "{{ haveged_package_state }}"
 
-- name: start and enable software
+- name: start and enable haveged
   service:
     name: haveged
     state: started
