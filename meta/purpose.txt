@@ -1,1 +1,0 @@
-Provides haveged, a quick entropy provider for Tomcat, for your system.

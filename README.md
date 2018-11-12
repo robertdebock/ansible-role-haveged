@@ -3,8 +3,7 @@ haveged
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-haveged.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-haveged)
 
-Provides haveged, a quick entropy provider for Tomcat, for your system.
-
+The purpose of this role is to install and configure haveged on your system.
 
 Example Playbook
 ----------------
