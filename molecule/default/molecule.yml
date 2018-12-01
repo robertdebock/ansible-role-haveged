@@ -43,6 +43,9 @@ platforms:
 provisioner:
   name: ansible
   inventory:
+    host_vars:
+      haveged-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
     group_vars:
       all:
         haveged_ignore_docker: no
