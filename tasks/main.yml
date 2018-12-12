@@ -12,6 +12,6 @@
   service:
     name: haveged
     state: started
-    enabled: true
+    enabled: yes
   when:
     - ansible_virtualization_type != "docker" or haveged_ignore_docker
