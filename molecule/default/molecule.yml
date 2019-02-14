@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: haveged-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: haveged-ubuntu-artful
-    image: ubuntu:artful
+  - name: haveged-ubuntu-latest
+    image: ubuntu:latest
+  - name: haveged-ubuntu-rolling
+    image: ubuntu:rolling
   - name: haveged-ubuntu-devel
     image: ubuntu:devel
   - name: haveged-ubuntu-latest
