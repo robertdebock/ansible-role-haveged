@@ -30,9 +30,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ansible-role-haveged
-
-# To update all packages installed by this roles, set `haveged_package_state` to `latest`.
-haveged_package_state: present
 ```
 
 Requirements

@@ -3,7 +3,7 @@
 - name: install haveged
   package:
     name: haveged
-    state: "{{ haveged_package_state }}"
+    state: present
   register: haveged_install_haveged
   until: haveged_install_haveged is succeeded
   retries: 3
