@@ -19,7 +19,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.haveged
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -34,12 +33,6 @@ These variables are set in `defaults/main.yml`:
 
 # To update all packages installed by this roles, set `haveged_package_state` to `latest`.
 haveged_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-haveged_ignore_docker: yes
-
 ```
 
 Requirements
