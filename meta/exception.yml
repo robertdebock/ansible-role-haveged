@@ -1,0 +1,8 @@
+---
+exceptions:
+  - variation: Debian
+    reason: "Idempotency issue with start and enable haveged"
+  - variation: openSUSE
+    reason: "Idempotency issue with start and enable haveged"
+  - variation: Ubuntu
+    reason: "Idempotency issue with start and enable haveged"
