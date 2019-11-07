@@ -1,8 +1,10 @@
 ---
 exceptions:
-  - variation: Debian
+  - variation: debian
     reason: "Idempotency issue with start and enable haveged"
-  - variation: openSUSE
+  - variation: opensuse
     reason: "Idempotency issue with start and enable haveged"
-  - variation: Ubuntu
+  - variation: ubuntu
     reason: "Idempotency issue with start and enable haveged"
+  - variation: amazonlinux
+    reason: "No package matching 'haveged' found available, installed or updated"

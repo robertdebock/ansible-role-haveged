@@ -76,8 +76,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
-|amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
 |fedora|latest|no|
@@ -96,9 +94,10 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| Debian | Idempotency issue with start and enable haveged |
-| openSUSE | Idempotency issue with start and enable haveged |
-| Ubuntu | Idempotency issue with start and enable haveged |
+| debian | Idempotency issue with start and enable haveged |
+| opensuse | Idempotency issue with start and enable haveged |
+| ubuntu | Idempotency issue with start and enable haveged |
+| amazonlinux | No package matching 'haveged' found available, installed or updated |
 
 
 
