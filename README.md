@@ -101,7 +101,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux | No package matching 'haveged' found available, installed or updated |
 
 
-
 Testing
 -------
 
