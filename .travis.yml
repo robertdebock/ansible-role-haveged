@@ -17,6 +17,8 @@ env:
     - image="alpine"
     - image="alpine" tag="edge"
     # - namespace="archlinux" image="base"
+    - image="redhat" tag="7"
+    - image="redhat"
     - image="fedora"
     - image="fedora" tag="rawhide"
 

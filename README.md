@@ -79,6 +79,8 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |---------|---|--------------|
 |alpine|latest|no|
 |alpine|edge|yes|
+|redhat|7|no|
+|redhat|latest|no|
 |fedora|latest|no|
 |fedora|rawhide|yes|
 

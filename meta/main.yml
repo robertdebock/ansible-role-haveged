@@ -25,7 +25,7 @@ galaxy_info:
   galaxy_tags:
     - entropy
     - haveged
-    - rhel
+    - redhat
     - system
     - installer
     - server
