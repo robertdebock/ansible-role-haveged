@@ -14,17 +14,13 @@ env:
   global:
     namespace="robertdebock"
   matrix:
-    - image="alpine"
+    - image="alpine" tag="latest"
     - image="alpine" tag="edge"
-    - image="redhat" tag="7"
-    - image="redhat"
-    - image="fedora"
+    - image="centos" tag="7"
+    - image="centos" tag="latest"
+    - image="fedora" tag="30"
+    - image="fedora" tag="latest"
     - image="fedora" tag="rawhide"
-
-matrix:
-  allow_failures:
-    - env: image="alpine" tag="edge"
-    - env: image="fedora" tag="rawhide"
 
 cache:
   - pip
