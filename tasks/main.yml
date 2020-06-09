@@ -8,6 +8,9 @@
   until: haveged_install_haveged is succeeded
   retries: 3
 
+- name: debug
+  command: /usr/sbin/haveged -w 1024 -v 1 --Foreground
+
 - name: start and enable haveged
   service:
     name: haveged
