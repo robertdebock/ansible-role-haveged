@@ -13,8 +13,7 @@
     name: write_wakeup_threshold
     value: "{{ haveged_write_wakeup_threshold }}"
   when:
-    - ansible_virtualization_type != "docker"
-    - ansible_virtualization_type != "container"
+    - ansible_connection != "docker"
 
 - name: create /etc/systemd/system/haveged.service.d/
   file:
