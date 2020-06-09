@@ -29,6 +29,9 @@
   when:
     - ansible_service_mgr == 'systemd'
 
+- name: flush handlers
+  meta: flush_handlers
+
 - name: start and enable haveged
   service:
     name: haveged
