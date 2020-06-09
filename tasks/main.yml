@@ -8,8 +8,27 @@
   until: haveged_install_haveged is succeeded
   retries: 3
 
-- name: debug
-  command: /usr/sbin/haveged -w 1024 -v 1 --Foreground
+- name: set write_wakeup_threshold
+  sysctl:
+    name: write_wakeup_threshold
+    value: "{{ haveged_write_wakeup_threshold }}"
+  when:
+    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "container"
+
+- name: create /etc/systemd/system/haveged.service.d/
+  file:
+    path: /etc/systemd/system/haveged.service.d
+    state: directory
+
+- name: override write_wakeup_threshold value in service
+  template:
+    src: custom.conf.j2
+    dest: /etc/systemd/system/haveged.service.d/custom.conf
+  notify:
+    - daemon reload
+  when:
+    - ansible_service_mgr == 'systemd'
 
 - name: start and enable haveged
   service:

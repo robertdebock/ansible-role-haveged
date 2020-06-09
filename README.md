@@ -31,6 +31,7 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
+    - role: robertdebock.sysctl
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
@@ -54,6 +55,9 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ansible-role-haveged
+
+# Set write_wakeup_threshold of daemon interface to nnn bits.
+haveged_write_wakeup_threshold: 1024
 ```
 
 ## [Requirements](#requirements)
@@ -67,6 +71,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ---
 - robertdebock.bootstrap
 - robertdebock.epel
+- robertdebock.sysctl
 
 ```
 
