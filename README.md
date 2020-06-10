@@ -89,7 +89,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |alpine|all|
-|amazon|2018.03|
 |el|7, 8|
 |debian|bullseye|
 |fedora|31, 32|
@@ -106,10 +105,9 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| debian | Idempotency issue with start and enable haveged |
 | opensuse | Idempotency issue with start and enable haveged |
 | ubuntu | Idempotency issue with start and enable haveged |
-| amazonlinux | No package matching 'haveged' found available, installed or updated |
+| amazonlinux | Dependency robertdebock.sysctl does not work. |
 
 
 ## [Testing](#testing)

@@ -16,7 +16,6 @@ env:
   matrix:
     - image="alpine" tag="latest"
     - image="alpine" tag="edge"
-    - image="amazonlinux" tag="1"
     - image="centos" tag="7"
     - image="centos" tag="latest"
     - image="debian" tag="bullseye"
@@ -37,5 +36,5 @@ notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
     rooms:
-      - secure: "I8Ati4kKZ6/U1A6TokNiZswtdXpUp3Nfm4PNL2ocrgWVQKcVeAPNZq0L7CVoZSlDcpkFOCfdElf/RicI3Meq5fH9UHjQHa0mDB8grGLmULLohgAEdrc20nBPvtSmoqC2RMxTC+/ovd1BLjbTLMRmFRZPngq2sqCbiVBtnJH0lpTnx981BMnW4Lrz5e62aoobS+qoX04o4o1PrVEwBZvBV4zS7o+2mZb7hJ1w8nyTCI0WzLjX/9sR2SVRr2gYkLZh9BS3/oibQRCX6VeZRJL+SGUcUAAjwH6XQ4XGYdMtrxI36zM7bCMRtiqG9/Sg4uEegzm+KPZAT8/aMshhortz/uUBuySULySn3vbcknEHZXkLohlybRvuV/U6rL4r+CGG6B2f/+ZRzluQKEl//fq46TA7Ih7XxfUDSlZyXogEv3EPN79LNsMidaufxJQPY3GXXRny8B21PSkGrLnTbfrxO6qnPvzh339Q1MpWvmkxb37XhTLVPDntQAizu1nZZvOsxagkrsMzfojkRKh3B3Uj+hSgdHYNTaDwVTOBVTQs5ju7hOOvYojj9zYW7Yr8RX5EBoJTkC/WWGh/yW5xksJ1asJaRBoVw3nOrHHC2FwZ10bl0psJiS4zBzUgmdd22lD1SP9e9DQ6xbl1BZ2qhc03AYavvmbJfTffDa10KbdLidk="
+      - secure: "aIW1luQqTUSTWBx5Le4tXr8wlZ/yeSDQWz2Z46BjSbiRGj4o7hxXBg9AZmT2YiaC48TQxaTztztWahZ5lDuayb9f5lqU82fD3pwPeKKjachRLmpPpS+i7/l48OPq3H51nG/gOltBvLzn8y5DCmCCaHApcAHKTa9PEpoeoRtueJeqgaVKAzuTgBddS8fXYKDQPUJ0YfkzbrgGE+KXDvNDitCs8hnXPdEB475KYvLi4tfniUsauJnJwRuPINLzlYiSdtUTnAvVZTcJ4WVs6mQmXG4B4KuyIljEUb6gY5VMRlTbALqgpCVmUQjpiSNJrPqL9YmNWFcwwG7x41JuOKvwrhF/dkrrL6avGb8ytQ1ivF5/EjpJ+JJP7n6UH3o4iMcDqFy0fEbiOOwrgC0r8xeyRABol9ooVUzsJfGCcYCbuCa3z+R0u61NTBxL4OfzcZ6R5AyzuPkmQZ7uHX6k6NhqaQNAYm32ohchugNhhO55VFeXQ+7bDVdMl/mqvQa5YWQky1IDRfkkABvaOL/onRxzi59xmKgyxPqkMRM2DQAWBX9tpZPajWoh80V1jglwNRaQqYEdMC9jkiJWG+Iv0NOOcB7kcswgRAoGC9RdWDzPVSyYRfbireznkcpMnh/Tz5rR9+BbLqZC7F81S6d7XkGj4GFIwvjIDbzdLtk02psk4g8="
   email: false
