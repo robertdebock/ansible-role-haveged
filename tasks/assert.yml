@@ -1,0 +1,7 @@
+---
+- name: test if haveged_write_wakeup_threshold is set correctly
+  assert:
+    that:
+      - haveged_write_wakeup_threshold is defined
+      - haveged_write_wakeup_threshold | int
+      - haveged_write_wakeup_threshold | int > 0
