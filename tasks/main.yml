@@ -7,9 +7,6 @@
   package:
     name: haveged
     state: present
-  register: haveged_install_haveged
-  until: haveged_install_haveged is succeeded
-  retries: 3
 
 - name: set write_wakeup_threshold
   sysctl:
