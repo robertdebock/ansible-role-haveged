@@ -19,11 +19,13 @@
   file:
     path: /etc/systemd/system/haveged.service.d
     state: directory
+    mode: "0755"
 
 - name: override write_wakeup_threshold value in service
   template:
     src: custom.conf.j2
     dest: /etc/systemd/system/haveged.service.d/custom.conf
+    mode: "0640"
   notify:
     - daemon reload
   when:
