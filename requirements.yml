@@ -1,4 +1,5 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.epel
-- robertdebock.sysctl
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.epel
+  - name: robertdebock.sysctl
