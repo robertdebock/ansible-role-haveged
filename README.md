@@ -56,6 +56,9 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for ansible-role-haveged
 
+# Set name of the sysctl write_wakeup_threshold setting.
+haveged_write_wakeup_threshold_setting_name: write_wakeup_threshold
+
 # Set write_wakeup_threshold of daemon interface to nnn bits.
 haveged_write_wakeup_threshold: 1024
 ```
