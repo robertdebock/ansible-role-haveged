@@ -11,8 +11,9 @@
 
 - name: set write_wakeup_threshold
   sysctl:
-    name: write_wakeup_threshold
+    name: kernel.random.write_wakeup_threshold
     value: "{{ haveged_write_wakeup_threshold }}"
+    state: present
   when:
     - ansible_connection != "docker"
 
