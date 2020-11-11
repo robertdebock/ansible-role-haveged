@@ -3,6 +3,6 @@
   assert:
     that:
       - haveged_write_wakeup_threshold is defined
-      - haveged_write_wakeup_threshold | int
+      - haveged_write_wakeup_threshold is number
       - haveged_write_wakeup_threshold | int > 0
     quiet: yes
