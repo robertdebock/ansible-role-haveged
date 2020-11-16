@@ -4,5 +4,5 @@
     that:
       - haveged_write_wakeup_threshold is defined
       - haveged_write_wakeup_threshold is number
-      - haveged_write_wakeup_threshold | int > 0
+      - haveged_write_wakeup_threshold > 0
     quiet: yes
