@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install haveged
-  package:
+  ansible.builtin.package:
     name: haveged
     state: present
 
 - name: set write_wakeup_threshold
-  sysctl:
+  ansible.posix.sysctl:
     name: kernel.random.write_wakeup_threshold
     value: "{{ haveged_write_wakeup_threshold | string }}"
     state: present
@@ -20,13 +20,13 @@
     - ansible_connection != "docker"
 
 - name: create /etc/systemd/system/haveged.service.d/
-  file:
+  ansible.builtin.file:
     path: /etc/systemd/system/haveged.service.d
     state: directory
     mode: "0755"
 
 - name: override write_wakeup_threshold value in service
-  template:
+  ansible.builtin.template:
     src: custom.conf.j2
     dest: /etc/systemd/system/haveged.service.d/custom.conf
     mode: "0640"
@@ -36,10 +36,10 @@
     - ansible_service_mgr == 'systemd'
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: start and enable haveged
-  service:
+  ansible.builtin.service:
     name: haveged
     state: started
     enabled: yes

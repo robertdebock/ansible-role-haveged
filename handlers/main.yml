@@ -2,5 +2,5 @@
 # handlers file for haveged
 
 - name: daemon reload
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: yes
