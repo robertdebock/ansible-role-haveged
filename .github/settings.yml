@@ -5,4 +5,4 @@
 repository:
   description: Install and configure haveged on your system.
   homepage: https://robertdebock.nl/
-  topics: entropy, haveged, system, installer, server, ansible, molecule, tox, playbook, hacktoberfest
+  topics: entropy, haveged, system, installer, server, ansible, molecule, tox, playbook
