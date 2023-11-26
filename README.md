@@ -1,4 +1,4 @@
-# Ansible role [haveged](#haveged)
+# [Ansible role haveged](#haveged)
 
 Install and configure haveged on your system.
 
