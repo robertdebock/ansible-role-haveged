@@ -34,7 +34,7 @@
   notify:
     - Daemon reload
   when:
-    - ansible_service_mgr == 'systemd'
+    - ansible_facts['service_mgr'] == 'systemd'
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
