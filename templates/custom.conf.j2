@@ -3,3 +3,7 @@
 [Service]
 ExecStart=
 ExecStart=/usr/sbin/haveged --write {{ haveged_write_wakeup_threshold }} --verbose 1 --Foreground
+
+# Debian 13 does not start haveged in containers, reset that condition (it makes no difference on real systems).
+[Unit]
+ConditionVirtualization=
