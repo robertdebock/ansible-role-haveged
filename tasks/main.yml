@@ -12,6 +12,12 @@
     name: haveged
     state: present
 
+# Recent kernels no longer have write_wakeup_threshold, haveged fails to start when asked to write it.
+- name: Check if write_wakeup_threshold exists
+  ansible.builtin.stat:
+    path: /proc/sys/kernel/random/write_wakeup_threshold
+  register: haveged_write_wakeup_threshold_stat
+
 - name: Set write_wakeup_threshold
   ansible.posix.sysctl:
     name: kernel.random.write_wakeup_threshold
@@ -19,6 +25,7 @@
     state: present
   when:
     - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
+    - haveged_write_wakeup_threshold_stat.stat.exists
 
 - name: Create /etc/systemd/system/haveged.service.d/
   ansible.builtin.file:
