@@ -63,7 +63,7 @@
       ansible.builtin.debug:
         var: dbg.stdout_lines
     - name: DEBUG cpu and unit
-      ansible.builtin.shell: grep -m1 "model name" /proc/cpuinfo; uname -r; systemctl cat haveged | tail -25; /usr/sbin/haveged --verbose 1 --Foreground & sleep 3; kill $!; true
+      ansible.builtin.shell: set -o pipefail; grep -m1 "model name" /proc/cpuinfo; uname -r; systemctl cat haveged | tail -25; /usr/sbin/haveged --verbose 1 --Foreground & sleep 3; kill $!; true
       register: dbg2
       changed_when: false
       failed_when: false
