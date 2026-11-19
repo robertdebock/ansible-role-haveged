@@ -3,6 +3,8 @@
 [Service]
 ExecStart=
 ExecStart=/usr/sbin/haveged{% if haveged_write_wakeup_threshold_stat.stat.exists %} --write {{ haveged_write_wakeup_threshold }}{% endif %} --verbose 1 --Foreground
+# haveged is killed (SIGTRAP) on some CPUs when MemoryDenyWriteExecute is enabled (Debian 13 unit).
+MemoryDenyWriteExecute=false
 
 # Debian 13 does not start haveged in containers, reset that condition (it makes no difference on real systems).
 [Unit]
