@@ -47,7 +47,30 @@
   ansible.builtin.meta: flush_handlers
 
 - name: Start and enable haveged
-  ansible.builtin.service:
-    name: haveged
-    state: started
-    enabled: true
+  block:
+    - name: Start and enable haveged service
+      ansible.builtin.service:
+        name: haveged
+        state: started
+        enabled: true
+  rescue:
+    - name: DEBUG matrix
+      ansible.builtin.shell: |
+        set -o pipefail
+        systemctl stop haveged || true
+        base="-p CapabilityBoundingSet=CAP_SYS_ADMIN -p PrivateDevices=true -p PrivateNetwork=true -p ProtectSystem=full -p ProtectHome=true -p RestrictNamespaces=true -p LockPersonality=true -p SystemCallArchitectures=native -p SecureBits=noroot-locked -p RestrictRealtime=true -p PrivateTmp=true"
+        echo "== all: $(systemd-run --pipe --wait -q $base /usr/sbin/haveged --verbose 1 --Foreground 2>&1 | head -3)"
+        for o in CapabilityBoundingSet= PrivateDevices=false PrivateNetwork=false SecureBits= ProtectSystem=no PrivateTmp=false; do
+          b=$(echo "$base" | sed "s/-p ${o%%=*}=[^ ]*//")
+          echo "== relax $o: $(timeout 8 systemd-run --pipe --wait -q $b -p $o /usr/sbin/haveged --verbose 1 --Foreground 2>&1 | head -3) rc=$?"
+        done
+        echo "== none: $(timeout 8 systemd-run --pipe --wait -q /usr/sbin/haveged --verbose 1 --Foreground 2>&1 | head -3)"
+        dmesg 2>&1 | tail -3
+      register: dbg
+      changed_when: false
+      failed_when: false
+    - name: DEBUG show
+      ansible.builtin.debug:
+        var: dbg.stdout_lines
+    - name: Fail
+      ansible.builtin.fail:
